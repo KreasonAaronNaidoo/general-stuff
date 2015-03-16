@@ -185,11 +185,13 @@ void key (unsigned char key, int xx, int yy){
             break;
             
         case 'q':
-            looky = looky + 0.1;
+            looky = looky + 0.08;
+            cout << "looky: " << looky << endl;
             break;
         
-        case 'a':
-            looky = looky - 0.1;
+        case 'z':
+            looky = looky - 0.08;
+            cout << "looky: " << looky << endl;
             break;
         
         case 'l':
@@ -200,9 +202,23 @@ void key (unsigned char key, int xx, int yy){
             exit(1);
             break;
             
+        case 'a':
+            camz = camz - sin(-angle + M_PI/2);
+            camx = camx - cos(-angle + M_PI/2);
+            break;
+            
+        case 'd':
+            camz = camz + sin(-angle + M_PI/2);
+            camx = camx + cos(-angle + M_PI/2);
+
+            break;
+
+            
         default:
             break;
     }
+    lookx = cos(-angle) + camx;
+    lookz = sin(-angle) + camz;
     
     glutPostRedisplay();
 
@@ -215,12 +231,12 @@ void arrowKey(int key, int xx, int y){
     switch (key) {
         case GLUT_KEY_RIGHT :
             
-            angle = angle - M_PI/20;
+            angle = angle - M_PI/200;
             break;
             
         case GLUT_KEY_LEFT :
 
-            angle = angle + M_PI/20;
+            angle = angle + M_PI/200;
             break;
             
         case GLUT_KEY_DOWN :
@@ -236,7 +252,7 @@ void arrowKey(int key, int xx, int y){
             break;
     }
     
-    cout << "lookx " << lookx << "   lookz "<<lookz<<"  angle " <<angle<<endl;
+    cout << "lookx: " << lookx << "   lookz: "<<lookz<<"  angle: " <<angle<<endl;
     
     lookx = cos(-angle) + camx;
     lookz = sin(-angle) + camz;
@@ -253,9 +269,9 @@ int main(int argc, char** argv)
 {
     glutInit(&argc, argv);          // Initialize GLUT
     
-    glutInitWindowSize(640, 480);   // Set the window's initial width & height - non-square
-    glutInitWindowPosition(50, 50); // Position the window's initial top-left corner
-    glutCreateWindow("Model Transform");  // Create window with the given title
+    glutInitWindowSize(640, 500);   // Set the window's initial width & height - non-square
+    glutInitWindowPosition(200, 100); // Position the window's initial top-left corner
+    glutCreateWindow("Snowman Army");  // Create window with the given title
     
     glutDisplayFunc(display);       // Register callback handler for window re-paint event
     glutReshapeFunc(reshape);
