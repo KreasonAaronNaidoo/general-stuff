@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		933A429A1AB45B8B00B12D01 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 933A42991AB45B8B00B12D01 /* main.cpp */; };
+		933A42A11AB45BA600B12D01 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933A42A01AB45BA600B12D01 /* GLUT.framework */; };
+		933A42A31AB45BAD00B12D01 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 933A42A21AB45BAD00B12D01 /* OpenGL.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +25,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		933A42961AB45B8B00B12D01 /* TUT4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TUT4; sourceTree = BUILT_PRODUCTS_DIR; };
+		933A42961AB45B8B00B12D01 /* Snowman Army */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Snowman Army"; sourceTree = BUILT_PRODUCTS_DIR; };
 		933A42991AB45B8B00B12D01 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		933A42A01AB45BA600B12D01 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		933A42A21AB45BAD00B12D01 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +36,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				933A42A31AB45BAD00B12D01 /* OpenGL.framework in Frameworks */,
+				933A42A11AB45BA600B12D01 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +47,8 @@
 		933A428D1AB45B8B00B12D01 = {
 			isa = PBXGroup;
 			children = (
+				933A42A21AB45BAD00B12D01 /* OpenGL.framework */,
+				933A42A01AB45BA600B12D01 /* GLUT.framework */,
 				933A42981AB45B8B00B12D01 /* TUT4 */,
 				933A42971AB45B8B00B12D01 /* Products */,
 			);
@@ -49,7 +57,7 @@
 		933A42971AB45B8B00B12D01 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				933A42961AB45B8B00B12D01 /* TUT4 */,
+				933A42961AB45B8B00B12D01 /* Snowman Army */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		933A42951AB45B8B00B12D01 /* TUT4 */ = {
+		933A42951AB45B8B00B12D01 /* Snowman Army */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 933A429D1AB45B8B00B12D01 /* Build configuration list for PBXNativeTarget "TUT4" */;
+			buildConfigurationList = 933A429D1AB45B8B00B12D01 /* Build configuration list for PBXNativeTarget "Snowman Army" */;
 			buildPhases = (
 				933A42921AB45B8B00B12D01 /* Sources */,
 				933A42931AB45B8B00B12D01 /* Frameworks */,
@@ -77,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = TUT4;
+			name = "Snowman Army";
 			productName = TUT4;
-			productReference = 933A42961AB45B8B00B12D01 /* TUT4 */;
+			productReference = 933A42961AB45B8B00B12D01 /* Snowman Army */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -96,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 933A42911AB45B8B00B12D01 /* Build configuration list for PBXProject "TUT4" */;
+			buildConfigurationList = 933A42911AB45B8B00B12D01 /* Build configuration list for PBXProject "Snowman Army" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -108,7 +116,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				933A42951AB45B8B00B12D01 /* TUT4 */,
+				933A42951AB45B8B00B12D01 /* Snowman Army */,
 			);
 		};
 /* End PBXProject section */
@@ -202,21 +210,23 @@
 		933A429E1AB45B8B00B12D01 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				PRODUCT_NAME = "Snowman Army";
 			};
 			name = Debug;
 		};
 		933A429F1AB45B8B00B12D01 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				PRODUCT_NAME = "Snowman Army";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		933A42911AB45B8B00B12D01 /* Build configuration list for PBXProject "TUT4" */ = {
+		933A42911AB45B8B00B12D01 /* Build configuration list for PBXProject "Snowman Army" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				933A429B1AB45B8B00B12D01 /* Debug */,
@@ -225,7 +235,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		933A429D1AB45B8B00B12D01 /* Build configuration list for PBXNativeTarget "TUT4" */ = {
+		933A429D1AB45B8B00B12D01 /* Build configuration list for PBXNativeTarget "Snowman Army" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				933A429E1AB45B8B00B12D01 /* Debug */,
