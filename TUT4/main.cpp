@@ -184,12 +184,12 @@ void key (unsigned char key, int xx, int yy){
             angle = -M_PI/2;
             break;
             
-        case 'q':
+        case 'w':
             looky = looky + 0.08;
             cout << "looky: " << looky << endl;
             break;
         
-        case 'z':
+        case 's':
             looky = looky - 0.08;
             cout << "looky: " << looky << endl;
             break;
