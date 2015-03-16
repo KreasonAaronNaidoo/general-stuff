@@ -4,6 +4,9 @@
 #include <stdlib.h>
 #include<iostream>
 #include <cmath>
+#include <stdio.h>
+
+
 
 using namespace std;
 
@@ -28,6 +31,8 @@ void initGL()
     
     glEnable(GL_DEPTH_TEST); // turns on hidden surface removal so that objects behind other objects do not get displayed
 }
+
+
 
 void drawSnowMan()
 {
@@ -83,11 +88,13 @@ void render()
     
     // Draw ground
     glColor3ub(0,64,0); // green
+    
     glBegin(GL_QUADS);
-    glVertex3f(-100.0f, -2.0f, -100.0f);
-    glVertex3f(-100.0f, -2.0f, 100.0f);
-    glVertex3f(100.0f, -2.0f, 100.0f);
-    glVertex3f(100.0f, -2.0f, -100.0f);
+        glVertex3f(-100.0f, -2.0f, -100.0f);
+        glVertex3f(-100.0f, -2.0f, 100.0f);
+        glVertex3f(100.0f, -2.0f, 100.0f);
+        glVertex3f(100.0f, -2.0f, -100.0f);
+   
     glEnd();
     
     // Draw 36 SnowMen
@@ -106,16 +113,10 @@ void render()
 }
 
 
-void update()
-{
-    
-}
 
 
 void display()
 {
-    
-    update();
     render();
 }
 
@@ -149,22 +150,26 @@ void reshape(int w, int h)
     
 }
 
+
+
 void lookaround(){
     
     angle2 = angle;
     float lim = angle2 + 2*M_PI;
-    
+
     do{
-        angle2 = angle2 + M_PI/200;
-        
-        lookx = 50*cos(-angle2);
-        lookz = 50*sin(-angle2)-50;
+        angle2 = angle2 + M_PI/500;
+        lookx = cos(-angle2) + camx;
+        lookz = sin(-angle2) + camz;
         render();
+        cout <<"angle:  " << angle2 << endl;
+        
     }while(angle2 < lim);
     
     angle2 = angle;
     
 }
+
 
 void key (unsigned char key, int xx, int yy){
     
@@ -175,15 +180,16 @@ void key (unsigned char key, int xx, int yy){
             camz = -50;
             lookx = 0;
             lookz = 0,0;
+            looky = 1.5;
             angle = -M_PI/2;
             break;
             
         case 'q':
-            looky = looky + 1;
+            looky = looky + 0.1;
             break;
         
         case 'a':
-            looky = looky - 1;
+            looky = looky - 0.1;
             break;
         
         case 'l':
